@@ -3,7 +3,7 @@ use ExtUtils::MakeMaker;
 # the contents of the Makefile that is written.
 WriteMakefile(
     'NAME'    => 'Filesys::ZFS',
-    'VERSION_FROM' => 'Filesys/ZFS.pm', # finds $VERSION 
+    'VERSION_FROM' => 'lib/Filesys/ZFS.pm', # finds $VERSION 
     'dist' => { COMPRESS => "gzip", SUFFIX=>"gz" },
     ($] ge '5.10')
         ? (

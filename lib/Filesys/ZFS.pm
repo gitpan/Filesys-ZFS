@@ -18,8 +18,9 @@ package Filesys::ZFS;
 #
 #        Original author: Colin Faber <colin_faber@fpsn.net>
 # Original creation date: 08/28/2014
-#                Version: $Id: ZFS.pm,v 1.3 2014/09/04 18:07:01 cfaber Exp $
+#                Version: $Id: ZFS.pm,v 1.4 2014/09/04 21:23:25 cfaber Exp $
 # 
+
 
 # Required libraries
 use strict;
@@ -89,7 +90,7 @@ sub new {
 
 
 # Local variables
-$__PACKAGE__::VERSION = $1 if('$Revision: 1.3 $' =~ /: ([\d\.]+) /);
+$__PACKAGE__::VERSION = $1 if('$Revision: 1.4 $' =~ /: ([\d\.]+) /);
 
 =head2 init()
 
