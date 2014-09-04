@@ -18,7 +18,7 @@ package Filesys::ZFS;
 #
 #        Original author: Colin Faber <colin_faber@fpsn.net>
 # Original creation date: 08/28/2014
-#                Version: $Id: ZFS.pm,v 1.2 2014/09/03 20:48:08 cfaber Exp $
+#                Version: $Id: ZFS.pm,v 1.3 2014/09/04 18:07:01 cfaber Exp $
 # 
 
 # Required libraries
@@ -89,7 +89,7 @@ sub new {
 
 
 # Local variables
-$__PACKAGE__::VERSION = $1 if('$Revision: 1.2 $' =~ /: ([\d\.]+) /);
+$__PACKAGE__::VERSION = $1 if('$Revision: 1.3 $' =~ /: ([\d\.]+) /);
 
 =head2 init()
 
@@ -183,8 +183,6 @@ sub list {
 
 Return the pool / snapshot / volume / bookmark name provided by the B<list()> method
 
-=head3 EXAMPLE:
-
 =over
 
  for my $pool ($ZFS->list('pools')){
@@ -200,8 +198,6 @@ sub name { return $_[0]->{name}; }
 =head2 state()
 
 Return the pool / snapshot / volume / bookmark state provided by the B<list()> method
-
-=head3 EXAMPLE:
 
 =over
 
@@ -229,8 +225,6 @@ sub state {
 
 Return the pool / snapshot / volume / bookmark errors provided by the B<list()> method
 
-=head3 EXAMPLE:
-
 =over
 
  for my $pool ($ZFS->list('pools')){
@@ -246,8 +240,6 @@ sub errors { return join("\n", @{ $_[0]->{errors} }) if $_[0]->{errors}; }
 =head2 mount()
 
 Return the pool / volume mount point (if available) provided by the B<list()> method
-
-=head3 EXAMPLE:
 
 =over
 
@@ -265,8 +257,6 @@ sub mount { return $_[0]->{mount}; }
 
 Return the pool / volume scan message (if available) provided by the B<list()> method
 
-=head3 EXAMPLE:
-
 =over
 
  for my $pool ($ZFS->list('pools')){
@@ -282,8 +272,6 @@ sub scan { return join("\n", @{ $_[0]->{scan} }) if $_[0]->{scan}; }
 =head2 free()
 
 Return the pool / volume free space (in KB) provided by the B<list()> method
-
-=head3 EXAMPLE:
 
 =over
 
@@ -301,8 +289,6 @@ sub free { return $_[0]->{free}; }
 
 Return the pool / volume used space (in KB) provided by the B<list()> method
 
-=head3 EXAMPLE:
-
 =over
 
  for my $pool ($ZFS->list('pools')){
@@ -319,8 +305,6 @@ sub used { return $_[0]->{used}; }
 
 Return the pool / volume referenced space (in KB) provided by the B<list()> method
 
-=head3 EXAMPLE:
-
 =over
 
  for my $pool ($ZFS->list('pools')){
@@ -336,8 +320,6 @@ sub referenced { return $_[0]->{refer}; }
 =head2 status()
 
 Return the pool / volume current status message  provided by the B<list()> method
-
-=head3 EXAMPLE:
 
 =over
 
@@ -357,8 +339,6 @@ sub status {
 =head2 action()
 
 Return the pool / volume current action message  provided by the B<list()> method
-
-=head3 EXAMPLE:
 
 =over
 
@@ -439,8 +419,6 @@ sub note {
 =head2 config()
 
 Return the pool / volume / snapshot / bookmark raw configuration message  provided by the B<list()> method
-
-=head3 EXAMPLE:
 
 =over
 
