@@ -1,3 +1,6 @@
+09/06/2014 v.1.5	Fix calcuation with sizes, documents state kilobytes
+			however bytes were used instad.
+
 09/04/2014 v.1.4	Fix installation issues. Sorry I had forgot to move
 			the library into lib/ so it wasn't actually installing.
 			Anyways, that's been corrected now.

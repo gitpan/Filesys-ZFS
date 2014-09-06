@@ -18,7 +18,7 @@ package Filesys::ZFS;
 #
 #        Original author: Colin Faber <colin_faber@fpsn.net>
 # Original creation date: 08/28/2014
-#                Version: $Id: ZFS.pm,v 1.4 2014/09/04 21:23:25 cfaber Exp $
+#                Version: $Id: ZFS.pm,v 1.5 2014/09/06 22:17:55 cfaber Exp $
 # 
 
 
@@ -90,7 +90,7 @@ sub new {
 
 
 # Local variables
-$__PACKAGE__::VERSION = $1 if('$Revision: 1.4 $' =~ /: ([\d\.]+) /);
+$__PACKAGE__::VERSION = $1 if('$Revision: 1.5 $' =~ /: ([\d\.]+) /);
 
 =head2 init()
 
@@ -609,6 +609,10 @@ sub _populate_zfs_list {
 				$self->{buf}->{ $type }  = '';
 			} else {
 				my ($pool, $used, $free, $refer, $mount) = split(/\s+/, $_, 5);
+				$used  = int($used / 1024) if $used;
+				$free  = int($free / 1024) if $free;
+				$refer = int($refer / 1024) if $refer;
+
 				$self->{buf}->{ $type }->{ $pool }->{name}  = $pool;
 				$self->{buf}->{ $type }->{ $pool }->{used}  = $used;
 				$self->{buf}->{ $type }->{ $pool }->{free}  = $free;
